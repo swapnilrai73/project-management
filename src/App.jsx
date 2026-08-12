@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import { Toaster } from "react-hot-toast";
 import Dashboard from "./pages/Dashboard";
@@ -9,7 +9,7 @@ import TaskDetails from "./pages/TaskDetails";
 
 const App = () => {
     return (
-        <>
+        <BrowserRouter basename="/project-management">
             <Toaster />
             <Routes>
                 <Route path="/" element={<Layout />}>
@@ -20,7 +20,7 @@ const App = () => {
                     <Route path="taskDetails" element={<TaskDetails />} />
                 </Route>
             </Routes>
-        </>
+        </BrowserRouter>
     );
 };
 
